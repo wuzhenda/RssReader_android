@@ -1,0 +1,22 @@
+# view AndroidManifest.xml #generated:38
+-keep class org.devtcg.rssreader.activity.ChannelAdd { <init>(...); }
+
+# view AndroidManifest.xml #generated:46
+-keep class org.devtcg.rssreader.activity.ChannelEdit { <init>(...); }
+
+# view AndroidManifest.xml #generated:24
+-keep class org.devtcg.rssreader.activity.ChannelList { <init>(...); }
+
+# view AndroidManifest.xml #generated:54
+-keep class org.devtcg.rssreader.activity.PostList { <init>(...); }
+
+# view AndroidManifest.xml #generated:62
+-keep class org.devtcg.rssreader.activity.PostView { <init>(...); }
+
+# view AndroidManifest.xml #generated:21
+-keep class org.devtcg.rssreader.provider.RSSReaderProvider { <init>(...); }
+
+# view res/layout/post_list.xml #generated:25
+# view res/layout/post_view.xml #generated:23
+-keep class org.devtcg.rssreader.view.ChannelHead { <init>(...); }
+
