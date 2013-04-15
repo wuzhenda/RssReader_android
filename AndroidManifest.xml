@@ -1,83 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
- # $Id: AndroidManifest.xml 112 2008-02-14 00:34:50Z jasta00 $
- #
- # Copyright (C) 2007 Josh Guilfoyle <jasta@devtcg.org>
- #
- # This program is free software; you can redistribute it and/or modify it
- # under the terms of the GNU General Public License as published by the
- # Free Software Foundation; either version 2, or (at your option) any
- # later version.
- #
- # This program is distributed in the hope that it will be useful, but
- # WITHOUT ANY WARRANTY; without even the implied warranty of
- # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- # General Public License for more details.
- -->
+<!-- Copyright (C) 2007 The Android Open Source Project
 
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- Declare the contents of this Android application.  The namespace
+     attribute brings in the Android platform namespace, and the package
+     supplies a unique name for the application.  When writing your
+     own application, the package name must be changed from "com.example.*"
+     to come from a domain that you own or have control over. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.devtcg.rssreader">
-    <application android:icon="@drawable/icon" android:label="RSSReader">
-        <provider android:name=".provider.RSSReaderProvider"
-        	android:authorities="org.devtcg.rssreader.provider.RSSReader" />
-
-        <activity android:name=".activity.ChannelList" android:label="@string/app_name">
+    package="com.example.android.rssreader">
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application android:label="RSS Reader">
+        <activity android:name="RssReader">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-            	<action android:name="android.intent.action.VIEW" />
-            	<action android:name="android.intent.action.PICK" />
-            	<action android:name="android.intent.action.EDIT" />
-            	<category android:name="android.intent.category.DEFAULT" />
-            	<data android:mimeType="vnd.android.cursor.dir/vnd.rssreader.channel" />
-            </intent-filter>
-        </activity>
+		</activity>
 
-        <activity android:name=".activity.ChannelAdd" android:label="@string/app_name">
-            <intent-filter android:label="New Channel">
-                <action android:name="android.intent.action.INSERT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/vnd.rssreader.channel" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".activity.ChannelEdit" android:label="@string/app_name">
-            <intent-filter android:label="Edit Channel">
-                <action android:name="android.intent.action.EDIT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.rssreader.channel" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".activity.PostList" android:label="@string/app_name">
-        	<intent-filter android:label="View Posts">
-        		<action android:name="android.intent.action.VIEW" />
-        		<category android:name="android.intent.category.DEFAULT" />
-        		<data android:mimeType="vnd.android.cursor.dir/vnd.rssreader.post" />
-        	</intent-filter>
-        </activity>
-
-        <activity android:name=".activity.PostView" android:label="@string/app_name">
-        	<intent-filter android:label="View Post">
-        		<action android:name="android.intent.action.VIEW" />
-        		<category android:name="android.intent.category.DEFAULT" />
-        		<data android:mimeType="vnd.android.cursor.item/vnd.rssreader.post" />
-        	</intent-filter>
-        </activity>
-
-<!--
-        <receiver android:name=".service.ReaderService_Setup" android:process=":remote">
-        	<intent-filter>
-        		<action android:name="android.intent.action.BOOT_COMPLETED" />
-        	</intent-filter>
-        </receiver>
-        
-        <receiver android:name=".service.ReaderService_Alarm" android:process=":remote" />
-        
-        <service android:name=".service.ReaderService" android:process=":remote" />
-  -->
-        
-    </application>
-</manifest> 
+  </application>
+</manifest>
